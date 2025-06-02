@@ -7,6 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
   ];
 
   # Bootloader.
@@ -79,7 +80,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.baileyb = {
     isNormalUser = true;
-    description = "Bailey Bignall";
+    description = "main user";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs;
       [
