@@ -114,6 +114,9 @@
     starship
     lutris
     gh
+    prismlauncher
+    spotify-qt
+    librespot
   ];
 
   environment.variables = {
