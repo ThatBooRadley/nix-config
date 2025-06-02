@@ -115,8 +115,7 @@
     lutris
     gh
     prismlauncher
-    spotify-qt
-    librespot
+    spotify
   ];
 
   environment.variables = {
