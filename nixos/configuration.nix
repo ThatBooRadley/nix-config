@@ -126,6 +126,10 @@
     SHELL = "nu";
   };
 
+  environment.interactiveShellInit = ''
+    alias refresh-os='nixos-rebuild switch --flake ~/Nix-Config#Nix-Config'
+  '';
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
