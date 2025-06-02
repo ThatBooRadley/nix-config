@@ -17,7 +17,7 @@
         Nix-Config = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system; };
 
-          modules = [ ./nixos/hosts/laptop/configuration.nix ];
+          modules = [ ./nixos/configuration.nix ];
 
         };
       };
