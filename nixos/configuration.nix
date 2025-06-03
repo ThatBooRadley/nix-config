@@ -98,6 +98,7 @@
 
   programs.steam.enable = true;
 
+  programs.direnv.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -123,9 +124,12 @@
     spotify
     jellyfin-media-player
     tailscale
+    lorri
   ];
 
+  #daemons
   services.tailscale.enable = true;
+  services.lorri.enable = true;
 
   environment.variables = {
     EDITOR = "nvim";
