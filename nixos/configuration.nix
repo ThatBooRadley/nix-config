@@ -9,6 +9,8 @@
     ./hardware-configuration.nix
 
   ];
+  #automatic garbage collection
+  nix.optimise.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -119,6 +121,8 @@
     gh
     prismlauncher
     spotify
+    tailscale
+    jellyfin-media-player
   ];
 
   environment.variables = {
