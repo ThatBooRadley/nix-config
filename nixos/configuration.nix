@@ -121,9 +121,11 @@
     gh
     prismlauncher
     spotify
-    tailscale
     jellyfin-media-player
+    tailscale
   ];
+
+  services.tailscale.enable = true;
 
   environment.variables = {
     EDITOR = "nvim";
