@@ -89,6 +89,8 @@
     shell = pkgs.nushell;
   };
 
+  users.defaultUserShell = pkgs.nushell;
+
   # Install firefox.
   programs.firefox.enable = false;
 
