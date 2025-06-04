@@ -125,6 +125,8 @@
     jellyfin-media-player
     tailscale
     lorri
+    variety
+    resources
   ];
 
   #daemons
