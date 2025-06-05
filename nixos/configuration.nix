@@ -133,6 +133,8 @@
     ardour
     protonup
     psst
+    obisidan
+    zettlr
   ];
 
   #daemons
