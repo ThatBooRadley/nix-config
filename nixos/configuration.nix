@@ -133,6 +133,7 @@
     godot
     ardour
     protonup
+    mopidy
   ];
 
   #daemons
