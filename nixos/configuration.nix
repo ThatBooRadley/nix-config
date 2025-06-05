@@ -133,7 +133,8 @@
     godot
     ardour
     protonup
-    mopidy
+    spotifyd
+    spotify-qt
   ];
 
   #daemons
