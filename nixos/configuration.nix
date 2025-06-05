@@ -124,7 +124,6 @@
     lutris
     gh
     prismlauncher
-    spotify
     jellyfin-media-player
     tailscale
     lorri
