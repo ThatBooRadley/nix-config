@@ -128,6 +128,7 @@
     resources
     godot
     ardour
+    bottles
   ];
 
   #daemons
