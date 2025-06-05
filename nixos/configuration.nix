@@ -95,7 +95,11 @@
   # Install firefox.
   programs.firefox.enable = false;
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  programs.gamemode.enable = true;
 
   programs.direnv.enable = true;
   # Allow unfree packages
@@ -128,7 +132,7 @@
     resources
     godot
     ardour
-    bottles
+    protonup
   ];
 
   #daemons
@@ -140,6 +144,11 @@
     BROWSER = "brave";
     TERMINAL = "zellij";
     SHELL = "nu";
+  };
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "home/baileyb/.steam/root/compatibilitytools.d";
   };
 
   environment.interactiveShellInit = ''
