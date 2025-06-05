@@ -133,7 +133,7 @@
     ardour
     protonup
     psst
-    obisidan
+    obsidian
     zettlr
   ];
 
