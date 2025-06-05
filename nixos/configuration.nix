@@ -7,7 +7,6 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
@@ -127,6 +126,8 @@
     lorri
     variety
     resources
+    godot
+    ardour
   ];
 
   #daemons
