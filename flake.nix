@@ -21,6 +21,7 @@
             ./nixos/hosts/baileyb/configuration.nix
             ./nixos/roles/git.nix
             ./nixos/roles/coding.nix
+            ./nixos/roles/gaming.nix
           ];
 
         };
