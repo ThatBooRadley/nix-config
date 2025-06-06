@@ -100,8 +100,8 @@
     yazi = {
       enable = true;
       settings.yazi = {
-        show_hidden = true;
-        linemode = "size";
+        mgr.show_hidden = true;
+        mgr.linemode = "size";
       };
     };
 
