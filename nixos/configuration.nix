@@ -104,7 +104,6 @@
         mgr.linemode = "size";
       };
     };
-    hedgedoc.enable = true;
   };
 
   # Allow unfree packages
@@ -142,6 +141,7 @@
   services = {
     tailscale.enable = true;
     lorri.enable = true;
+    hedgedoc.enable = true;
   };
 
   environment.variables = {
