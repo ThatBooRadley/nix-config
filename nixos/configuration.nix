@@ -132,7 +132,7 @@
     godot
     ardour
     protonup
-    psst
+    spotify
     obsidian
   ];
 
