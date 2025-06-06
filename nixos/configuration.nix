@@ -98,7 +98,7 @@
     neovim.enable = true;
     direnv.enable = true;
     yazi.enable = true;
-    starship.enable = true;
+
   };
 
   # Allow unfree packages
@@ -129,6 +129,7 @@
     protonup
     spotify
     obsidian
+    starship
   ];
 
   #daemons
