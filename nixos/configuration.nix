@@ -104,6 +104,7 @@
         mgr.linemode = "size";
       };
     };
+    nvf = { enable = true; };
   };
 
   # Allow unfree packages
