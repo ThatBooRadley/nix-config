@@ -88,14 +88,6 @@
     shell = pkgs.nushell;
   };
 
-  programs = {
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode.enable = true;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -106,26 +98,20 @@
     #  wget
     brave
     discord
-    lutris
-    prismlauncher
+
     jellyfin-media-player
     tailscale
     variety
     resources
-    godot
+
     ardour
-    protonup
+
     spotify
     obsidian
   ];
 
   #daemons
   services = { tailscale.enable = true; };
-
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "home/baileyb/.steam/root/compatibilitytools.d";
-  };
 
   environment.interactiveShellInit = ''
     alias refresh-os='nixos-rebuild switch --flake ~/Nix-Config#Nix-Config'

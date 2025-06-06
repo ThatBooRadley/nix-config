@@ -18,6 +18,7 @@
     nerd-fonts.caskaydia-mono
     lorri
     starship
+    godot
   ];
   services.lorri.enable = true;
 
