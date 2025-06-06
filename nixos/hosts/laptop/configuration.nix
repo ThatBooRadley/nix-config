@@ -13,6 +13,9 @@
     ./../../roles/media.nix
     ./../../roles/online.nix
     ./../../roles/music.nix
+    ./../../roles/wallpapers.nix
+    ./../../roles/process-manager.nix
+    ./../../roles/text-edit.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
@@ -96,14 +99,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    variety
-    resources
-    obsidian
-  ];
+  # $ nix search wget 
 
   #daemons
 

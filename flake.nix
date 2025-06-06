@@ -25,6 +25,9 @@
             ./nixos/roles/media.nix
             ./nixos/roles/online.nix
             ./nixos/roles/music.nix
+            ./nixos/roles/wallpapers.nix
+            ./nixos/roles/process-manager.nix
+            ./nixos/roles/text-edit.nix
           ];
 
         };
