@@ -19,7 +19,7 @@
     lorri
     starship
     godot
-    nodejs-slim
+    nodejs_24
   ];
   services.lorri.enable = true;
 
