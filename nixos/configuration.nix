@@ -97,7 +97,13 @@
     git.enable = true;
     neovim.enable = true;
     direnv.enable = true;
-    yazi.enable = true;
+    yazi = {
+      enable = true;
+      settings.yazi = {
+        show_hidden = true;
+        linemode = "size";
+      };
+    };
 
   };
 
