@@ -134,7 +134,6 @@
     protonup
     psst
     obsidian
-    zettlr
   ];
 
   #daemons
