@@ -1,5 +1,4 @@
-{ pkgs, config, lib, ... }: {
-  imports = [ ];
-  options = { programs.git.enable = true; };
-  config = { };
+{ pkgs, ... }: {
+  programs.git = { enable = true; };
+  environment.systemPackages = with pkgs; [ gh ];
 }

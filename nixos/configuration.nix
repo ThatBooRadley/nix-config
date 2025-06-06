@@ -94,7 +94,6 @@
       gamescopeSession.enable = true;
     };
     gamemode.enable = true;
-    git.enable = true;
     neovim.enable = true;
     direnv.enable = true;
     yazi = {
@@ -104,7 +103,7 @@
         mgr.linemode = "size";
       };
     };
-    nvf = { enable = true; };
+
   };
 
   # Allow unfree packages
@@ -123,7 +122,6 @@
     alacritty
     nerd-fonts.caskaydia-mono
     lutris
-    gh
     prismlauncher
     jellyfin-media-player
     tailscale
@@ -187,5 +185,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
