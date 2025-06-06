@@ -104,7 +104,7 @@
         mgr.linemode = "size";
       };
     };
-
+    hedgehox.enable = true;
   };
 
   # Allow unfree packages
