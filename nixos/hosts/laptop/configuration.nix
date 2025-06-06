@@ -7,7 +7,18 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./../../roles/git.nix
+    ./../../roles/coding.nix
+    ./../../roles/gaming.nix
+    ./../../roles/media.nix
+    ./../../roles/online.nix
+    ./../../roles/music.nix
+    ./../../roles/wallpapers.nix
+    ./../../roles/process-manager.nix
+    ./../../roles/text-edit.nix
   ];
+  #automatic garbage collection
+  nix.optimise.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -41,19 +52,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager.budgie.enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -79,7 +86,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.baileyb = {
     isNormalUser = true;
-    description = "Bailey Bignall";
+    description = "main user";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs;
       [
@@ -88,40 +95,17 @@
     shell = pkgs.nushell;
   };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
-  programs.steam.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    neovim
-    git
-    brave
-    discord
-    yazi
-    nushell
-    zellij
-    clang
-    alacritty
-    nerd-fonts.caskaydia-mono
-    starship
-    lutris
-    gh
-  ];
+  # $ nix search wget 
 
-  environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "brave";
-    TERMINAL = "zellij";
-    SHELL = "nu";
-  };
+  #daemons
+
+  environment.interactiveShellInit = ''
+    alias refresh-os='nixos-rebuild switch --flake ~/Nix-Config#Nix-Config'
+  '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Some programs need SUID wrappers, can be configured further or are
@@ -150,5 +134,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

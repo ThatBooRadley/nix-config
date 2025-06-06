@@ -18,8 +18,16 @@
           specialArgs = { inherit system; };
 
           modules = [
-
-            ./nixos/configuration.nix
+            ./nixos/hosts/laptop/configuration.nix
+            ./nixos/roles/git.nix
+            ./nixos/roles/coding.nix
+            ./nixos/roles/gaming.nix
+            ./nixos/roles/media.nix
+            ./nixos/roles/online.nix
+            ./nixos/roles/music.nix
+            ./nixos/roles/wallpapers.nix
+            ./nixos/roles/process-manager.nix
+            ./nixos/roles/text-edit.nix
           ];
 
         };
