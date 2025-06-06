@@ -22,6 +22,7 @@
             ./nixos/roles/git.nix
             ./nixos/roles/coding.nix
             ./nixos/roles/gaming.nix
+            ./nixos/roles/media.nix
           ];
 
         };

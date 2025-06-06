@@ -10,6 +10,7 @@
     ./../../roles/git.nix
     ./../../roles/coding.nix
     ./../../roles/gaming.nix
+    ./../../roles/media.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
@@ -99,20 +100,14 @@
     #  wget
     brave
     discord
-
-    jellyfin-media-player
-    tailscale
     variety
     resources
-
     ardour
-
     spotify
     obsidian
   ];
 
   #daemons
-  services = { tailscale.enable = true; };
 
   environment.interactiveShellInit = ''
     alias refresh-os='nixos-rebuild switch --flake ~/Nix-Config#Nix-Config'
