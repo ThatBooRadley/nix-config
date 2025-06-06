@@ -19,6 +19,7 @@
     lorri
     starship
     godot
+    neovim-node-client
   ];
   services.lorri.enable = true;
 
