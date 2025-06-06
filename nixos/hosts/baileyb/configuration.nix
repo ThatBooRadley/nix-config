@@ -7,6 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./../../roles/git.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
