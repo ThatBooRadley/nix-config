@@ -17,8 +17,11 @@
         Nix-Config = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system; };
 
-          modules =
-            [ ./nixos/hosts/baileyb/configuration.nix ./nixos/roles/git.nix ];
+          modules = [
+            ./nixos/hosts/baileyb/configuration.nix
+            ./nixos/roles/git.nix
+            ./nixos/roles/coding.nix
+          ];
 
         };
       };

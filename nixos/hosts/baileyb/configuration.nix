@@ -8,6 +8,7 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../roles/git.nix
+    ./../../roles/coding.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
@@ -87,24 +88,12 @@
     shell = pkgs.nushell;
   };
 
-  users.defaultUserShell = pkgs.nushell;
-
   programs = {
     steam = {
       enable = true;
       gamescopeSession.enable = true;
     };
     gamemode.enable = true;
-    neovim.enable = true;
-    direnv.enable = true;
-    yazi = {
-      enable = true;
-      settings.yazi = {
-        mgr.show_hidden = true;
-        mgr.linemode = "size";
-      };
-    };
-
   };
 
   # Allow unfree packages
@@ -117,16 +106,10 @@
     #  wget
     brave
     discord
-    nushell
-    zellij
-    clang
-    alacritty
-    nerd-fonts.caskaydia-mono
     lutris
     prismlauncher
     jellyfin-media-player
     tailscale
-    lorri
     variety
     resources
     godot
@@ -134,21 +117,10 @@
     protonup
     spotify
     obsidian
-    starship
   ];
 
   #daemons
-  services = {
-    tailscale.enable = true;
-    lorri.enable = true;
-  };
-
-  environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "brave";
-    TERMINAL = "zellij";
-    SHELL = "nu";
-  };
+  services = { tailscale.enable = true; };
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
