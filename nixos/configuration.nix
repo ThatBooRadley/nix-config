@@ -43,19 +43,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager.budgie.enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -92,19 +88,19 @@
 
   users.defaultUserShell = pkgs.nushell;
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
+  programs = {
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
+    git.enable = true;
+    neovim.enable = true;
+    direnv.enable = true;
+    yazi.enable = true;
+    starship.enable = true;
   };
-  programs.gamemode.enable = true;
 
-  programs.git.enable = true;
-  programs.neovim.enable = true;
-
-  programs.direnv.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -115,13 +111,11 @@
     #  wget
     brave
     discord
-    yazi
     nushell
     zellij
     clang
     alacritty
     nerd-fonts.caskaydia-mono
-    starship
     lutris
     gh
     prismlauncher
@@ -138,8 +132,10 @@
   ];
 
   #daemons
-  services.tailscale.enable = true;
-  services.lorri.enable = true;
+  services = {
+    tailscale.enable = true;
+    lorri.enable = true;
+  };
 
   environment.variables = {
     EDITOR = "nvim";
