@@ -11,6 +11,8 @@
     ./../../roles/coding.nix
     ./../../roles/gaming.nix
     ./../../roles/media.nix
+    ./../../roles/online.nix
+    ./../../roles/music.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
@@ -100,8 +102,6 @@
     #  wget
     variety
     resources
-    ardour
-    spotify
     obsidian
   ];
 
