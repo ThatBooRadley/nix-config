@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./../../roles/git.nix
     ./../../roles/coding.nix
+    ./../../roles/gaming.nix
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
