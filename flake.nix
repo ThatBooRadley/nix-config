@@ -6,10 +6,9 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, nvf, ... }:
     let
       system = "x86_64-linux";
-
       pkgs = import nixpkgs {
         inherit system;
 
@@ -24,6 +23,7 @@
           };
 
           modules = [
+            nvf.nixosModules.default
             ./nixos/hosts/laptop/configuration.nix
             ./nixos/roles/git.nix
             ./nixos/roles/coding.nix

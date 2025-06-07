@@ -12,6 +12,23 @@
         mgr.linemode = "size";
       };
     };
+    nvf = {
+      enable = true;
+      settings = {
+        vim = {
+          viAlias = false;
+          vimAlias = true;
+          lsp.enable = true;
+          languages = {
+            rust.enable = true;
+            nix.enable = true;
+            markdown.enable = true;
+            lua.enable = true;
+            clang.enable = true;
+          };
+        };
+      };
+    };
   };
   environment.systemPackages = with pkgs; [
     nushell
@@ -23,7 +40,6 @@
     starship
     godot
     nodejs_24
-    self.packages.${pkgs.stdenv.system}.neovim
   ];
   services.lorri.enable = true;
 
