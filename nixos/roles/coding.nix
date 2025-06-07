@@ -5,6 +5,7 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "Skullamoris";
       repo = "forest.nvim";
+hash = "bac501d971512e73cc80e5895c849290e0c297bf";
     };
   };
 in {
