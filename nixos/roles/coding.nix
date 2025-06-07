@@ -25,7 +25,12 @@
             markdown.enable = true;
             lua.enable = true;
             clang.enable = true;
+            enableExtraDiagnostics = true;
+            enableTreesitter = true;
+            enableFormatting = true;
           };
+          filetree.neo-tree.enable = true;
+          statusline.lualine.enable = true;
         };
       };
     };
