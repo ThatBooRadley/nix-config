@@ -27,7 +27,7 @@
             clang.enable = true;
             enableExtraDiagnostics = true;
             enableTreesitter = true;
-            enableFormatting = true;
+            enableFormat = true;
           };
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
