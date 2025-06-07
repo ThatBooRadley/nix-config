@@ -3,7 +3,6 @@
     neovim = {
       enable = true;
       defaultEditor = true;
-      extraPackages = with pkgs; [ gcc ];
     };
     direnv.enable = true;
     yazi = {
