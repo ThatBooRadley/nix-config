@@ -1,10 +1,8 @@
-{ pkgs, ... }: {
+{ self, pkgs, ... }: {
   programs = {
     neovim = {
       enable = true;
       defaultEditor = true;
-      runtime."parser/c.so".source =
-        "${pkgs.tree-sitter.builtGrammars.c}/parser";
     };
     direnv.enable = true;
     yazi = {
@@ -25,6 +23,7 @@
     starship
     godot
     nodejs_24
+    self.packages.${pkgs.stdenv.system}.neovim
   ];
   services.lorri.enable = true;
 
