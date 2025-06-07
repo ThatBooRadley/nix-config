@@ -3,6 +3,8 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      runtime."parser/c.so".source =
+        "${pkgs.tree-sitter.builtGrammars.c}/parser";
     };
     direnv.enable = true;
     yazi = {
