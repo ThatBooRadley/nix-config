@@ -47,7 +47,11 @@
           options.autoindent = true;
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
-          autocomplete.nvim-cmp.enable = true;
+          autocomplete = {
+            nvim-cmp.enable = true;
+            blink-cmp.enable = true;
+            enableSharedCmpSources = true;
+          };
           syntaxHighlighting = true;
           utility = {
             preview.markdownPreview.enable = true;
@@ -62,8 +66,16 @@
             nvim-web-devicons.enable = true;
             rainbow-delimiters.enable = true;
           };
+          theme = {transparent = true;};
 
-          startPlugins = [];
+          keymaps = [
+            {
+              key = "<leader>e";
+              mode = "n";
+              silent = true;
+              action = ":Neotree toggle";
+            }
+          ];
         };
       };
     };
