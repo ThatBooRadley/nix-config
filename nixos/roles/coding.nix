@@ -50,9 +50,17 @@
           autocomplete.nvim-cmp.enable = true;
           syntaxHighlighting = true;
           utility = {
-                        preview.markdownPreview.enable = true;
+            preview.markdownPreview.enable = true;
             sleuth.enable = true;
             snacks-nvim.enable = true;
+          };
+          tabline.nvimBufferline.enable = true;
+          visuals = {
+            fidget-nvim.enable = true;
+            indent-blankline.enable = true;
+            nvim-cursorline.enable = true;
+            nvim-web-devicons.enable = true;
+            rainbow-delimiters.enable = true;
           };
 
           startPlugins = [];
