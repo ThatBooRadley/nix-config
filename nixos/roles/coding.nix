@@ -72,7 +72,6 @@
             breadcrumbs.enable = true;
             illuminate.enable = true;
             modes-nvim.enable = true;
-            nvim-ufo.enable = true;
           };
 
           keymaps = [
