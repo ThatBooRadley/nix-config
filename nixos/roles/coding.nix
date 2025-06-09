@@ -41,11 +41,21 @@
           treesitter = {
             highlight.enable = true;
             indent.enable = true;
+            context.enable = true;
           };
+          notify.nvim-notify.enable = true;
+          options.autoindent = true;
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
           autocomplete.nvim-cmp.enable = true;
           syntaxHighlighting = true;
+          utility = {
+            images.image-nvim.enable = true;
+            preview.markdownPreview.enable = true;
+            sleuth.enable = true;
+            snacks-nvim.enable = true;
+          };
+
           startPlugins = [];
         };
       };
