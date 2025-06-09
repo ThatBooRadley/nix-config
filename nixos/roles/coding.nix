@@ -41,7 +41,7 @@
           treesitter = {
             highlight.enable = true;
             indent.enable = true;
-            context.enable = true;
+            #context.enable = true;
           };
           notify.nvim-notify.enable = true;
           options.autoindent = true;
