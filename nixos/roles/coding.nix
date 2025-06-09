@@ -66,7 +66,11 @@
             nvim-web-devicons.enable = true;
             rainbow-delimiters.enable = true;
           };
-          theme = {transparent = true;};
+          theme = {
+            enable = true;
+            transparent = true;
+            name = "solarized-osaka";
+          };
           ui = {
             borders.enable = true;
             breadcrumbs.enable = true;
