@@ -30,7 +30,7 @@
             enableTreesitter = true;
             enableFormat = true;
           };
-        LSP.enable = true;
+        lsp.enable = true;
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
         autocomplete.nvim-cmp.enable = true;
