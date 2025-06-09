@@ -1,5 +1,8 @@
-{ self, pkgs, ... }:
 {
+  self,
+  pkgs,
+  ...
+}: {
   programs = {
     neovim = {
       enable = true;
@@ -19,7 +22,12 @@
         vim = {
           viAlias = false;
           vimAlias = true;
-          lsp.enable = true;
+          lsp = {
+            enable = true;
+            formatOnSave = true;
+            inlayHints.enable = true;
+            lspSignature.enable = true;
+          };
           languages = {
             rust.enable = true;
             nix.enable = true;
@@ -30,11 +38,10 @@
             enableTreesitter = true;
             enableFormat = true;
           };
-        lsp.enable = true;
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-          startPlugins = [ ];
+          autocomplete.nvim-cmp.enable = true;
+          startPlugins = [];
         };
       };
     };
