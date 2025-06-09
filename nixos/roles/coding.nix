@@ -1,14 +1,5 @@
 { self, pkgs, ... }:
-let
-  forest = pkgs.vimUtils.buildVimPlugin {
-    name = "forest.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Skullamoris";
-      repo = "forest.nvim";
-hash = "bac501d971512e73cc80e5895c849290e0c297bf";
-    };
-  };
-in {
+{
   programs = {
     neovim = {
       enable = true;
@@ -38,10 +29,12 @@ in {
             enableExtraDiagnostics = true;
             enableTreesitter = true;
             enableFormat = true;
+        enableLSP = true;
           };
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
-          startPlugins = [ forest ];
+        autocomplete.nvim-cmp.enable = true;
+          startPlugins = [ ];
         };
       };
     };
