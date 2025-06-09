@@ -29,8 +29,8 @@
             enableExtraDiagnostics = true;
             enableTreesitter = true;
             enableFormat = true;
-        enableLSP = true;
           };
+        LSP.enable = true;
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
         autocomplete.nvim-cmp.enable = true;
