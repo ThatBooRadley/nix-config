@@ -69,7 +69,8 @@
           theme = {
             enable = true;
             transparent = true;
-            name = "solarized-osaka";
+            name = "rose-pine";
+            style = "dark";
           };
           ui = {
             borders.enable = true;
