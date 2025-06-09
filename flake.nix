@@ -1,12 +1,14 @@
 {
   description = "Nix Config flake";
 
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable"; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nvf.url = "github:notashelf/nvf";
+  };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, nvf, ... }:
     let
       system = "x86_64-linux";
-
       pkgs = import nixpkgs {
         inherit system;
 
@@ -15,9 +17,13 @@
     in {
       nixosConfigurations = {
         Nix-Config = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit system; };
+          specialArgs = {
+            inherit system;
+            inherit self;
+          };
 
           modules = [
+            nvf.nixosModules.default
             ./nixos/hosts/laptop/configuration.nix
             ./nixos/roles/git.nix
             ./nixos/roles/coding.nix
