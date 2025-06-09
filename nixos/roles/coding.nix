@@ -40,7 +40,7 @@
           };
           treesitter = {
             highlight.enable = true;
-            autoIndent.enable = true;
+            indent.enable = true;
           };
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
