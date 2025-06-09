@@ -50,8 +50,7 @@
           autocomplete.nvim-cmp.enable = true;
           syntaxHighlighting = true;
           utility = {
-            images.image-nvim.enable = true;
-            preview.markdownPreview.enable = true;
+                        preview.markdownPreview.enable = true;
             sleuth.enable = true;
             snacks-nvim.enable = true;
           };
