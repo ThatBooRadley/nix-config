@@ -49,7 +49,7 @@
           statusline.lualine.enable = true;
           autocomplete = {
             nvim-cmp.enable = true;
-            blink-cmp.enable = true;
+            #blink-cmp.enable = true;
             enableSharedCmpSources = true;
           };
           syntaxHighlighting = true;
@@ -67,13 +67,20 @@
             rainbow-delimiters.enable = true;
           };
           theme = {transparent = true;};
+          ui = {
+            borders.enable = true;
+            breadcrumbs.enable = true;
+            illuminate.enable = true;
+            modes-nvim.enable = true;
+            nvim-ufo.enable = true;
+          };
 
           keymaps = [
             {
               key = "<leader>e";
               mode = "n";
               silent = true;
-              action = ":Neotree toggle";
+              action = ":Neotree toggle<CR>";
             }
           ];
         };
