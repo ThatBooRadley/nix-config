@@ -70,7 +70,7 @@
             enable = true;
             transparent = true;
             name = "rose-pine";
-            style = "dawn";
+            style = "main";
           };
           ui = {
             borders.enable = true;
