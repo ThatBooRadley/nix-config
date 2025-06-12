@@ -102,7 +102,10 @@
     godot
     codeberg-cli
   ];
-  services.lorri.enable = true;
+  services = {
+    lorri.enable = true;
+    forgejo.enable = true;
+  };
 
   environment.variables = {
     EDITOR = "nvim";
