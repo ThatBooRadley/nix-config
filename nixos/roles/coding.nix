@@ -100,7 +100,7 @@
     lorri
     starship
     godot
-    nodejs_24
+    forgejo
   ];
   services.lorri.enable = true;
 
