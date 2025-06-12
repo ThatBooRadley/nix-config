@@ -100,7 +100,7 @@
     lorri
     starship
     godot
-    forgejo
+    codeberg-cli
   ];
   services.lorri.enable = true;
 
