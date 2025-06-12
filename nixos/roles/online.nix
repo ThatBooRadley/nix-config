@@ -1,1 +1,1 @@
-{pkgs, ...}: {environment.systemPackages = with pkgs; [brave discord vesktop];}
+{pkgs, ...}: {environment.systemPackages = with pkgs; [brave vesktop];}
