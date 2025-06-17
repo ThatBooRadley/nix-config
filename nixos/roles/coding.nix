@@ -105,7 +105,6 @@
   ];
   services = {
     lorri.enable = true;
-    forgejo.enable = true;
   };
 
   environment.variables = {
