@@ -102,7 +102,6 @@
     starship
     godot
     codeberg-cli
-    rpi-imager
   ];
   services = {
     lorri.enable = true;
