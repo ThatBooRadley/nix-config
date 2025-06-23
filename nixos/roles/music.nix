@@ -1,4 +1,3 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ spotify ardour ];
-
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [fmodex supercollider orca-c spotify ardour];
 }

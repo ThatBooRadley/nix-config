@@ -90,6 +90,7 @@
         };
       };
     };
+    nix-ld.enable = true;
   };
   environment.systemPackages = with pkgs; [
     nushell
@@ -100,9 +101,11 @@
     lorri
     starship
     godot
-    nodejs_24
+    codeberg-cli
   ];
-  services.lorri.enable = true;
+  services = {
+    lorri.enable = true;
+  };
 
   environment.variables = {
     EDITOR = "nvim";
