@@ -25,7 +25,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = ["nvidia"];
 
   hardware = {
     graphics = {
@@ -37,6 +36,7 @@
       powerManagement.finegrained = true;
       open = true;
       nvidiaSettings = true;
+      forceFullCompositionPipeline = true;
     };
   };
   networking.hostName = "nixos"; # Define your hostname.
