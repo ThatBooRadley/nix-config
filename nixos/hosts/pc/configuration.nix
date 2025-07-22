@@ -26,6 +26,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.finegrained = true;
+      open = true;
+      nvidiaSettings = true;
+    };
+  };
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

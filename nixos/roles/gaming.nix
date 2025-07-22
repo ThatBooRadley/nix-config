@@ -10,11 +10,4 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/baileyb/.steam/root/compatibilitytools.d";
   };
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      vpl-gpu-rt
-    ];
-  };
 }

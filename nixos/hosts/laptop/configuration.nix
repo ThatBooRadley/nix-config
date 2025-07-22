@@ -21,6 +21,12 @@
   ];
   #automatic garbage collection
   nix.optimise.automatic = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vpl-gpu-rt
+    ];
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
