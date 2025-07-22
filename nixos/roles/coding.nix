@@ -1,5 +1,5 @@
 {
-  self,
+  #self,
   pkgs,
   ...
 }: {
@@ -20,20 +20,46 @@
       enable = true;
       settings = {
         vim = {
-          viAlias = false;
-          vimAlias = true;
           lsp = {
             enable = true;
             formatOnSave = true;
             inlayHints.enable = true;
-            lspSignature.enable = true;
+            lightbulb.enable = true;
+            lspconfig.enable = true;
+            lspsaga.enable = true;
+            null-ls.enable = true;
+            #lspSignature.enable = true;
           };
           languages = {
-            rust.enable = true;
+            rust = {
+              enable = true;
+              crates.enable = true;
+              format.enable = true;
+              lsp = {
+                enable = true;
+                opts = ''
+                  ['rust-analyzer'] = {
+                    cargo = {
+                      allFeature = true
+                    },
+                    checkOnSave = true,
+                    procMacro = {
+                      enable = true,
+                    },
+
+                  },
+                '';
+              };
+            };
             nix.enable = true;
-            markdown.enable = true;
-            lua.enable = true;
+            nu.enable = true;
+            markdown = {
+              enable = true;
+              extensions.markview-nvim.enable = true;
+            };
             clang.enable = true;
+            java.enable = true;
+            yaml.enable = true;
             enableExtraDiagnostics = true;
             enableTreesitter = true;
             enableFormat = true;
@@ -41,15 +67,31 @@
           treesitter = {
             highlight.enable = true;
             indent.enable = true;
+            incrementalSelection.enable = true;
+            textobjects.enable = true;
             #context.enable = true;
           };
           notify.nvim-notify.enable = true;
-          options.autoindent = true;
+          options = {
+            autoindent = true;
+            wrap = false;
+          };
           filetree.neo-tree.enable = true;
           statusline.lualine.enable = true;
           autocomplete = {
-            nvim-cmp.enable = true;
-            #blink-cmp.enable = true;
+            #nvim-cmp.enable = true;
+            blink-cmp = {
+              enable = true;
+              friendly-snippets.enable = true;
+              sourcePlugins.emoji.enable = true;
+              setupOpts = {
+                signature.enabled = true;
+              };
+              sourcePlugins = {
+                ripgrep.enable = true;
+                spell.enable = true;
+              };
+            };
             enableSharedCmpSources = true;
           };
           syntaxHighlighting = true;
@@ -57,10 +99,12 @@
             preview.markdownPreview.enable = true;
             sleuth.enable = true;
             snacks-nvim.enable = true;
+            mkdir.enable = true;
           };
           tabline.nvimBufferline.enable = true;
           visuals = {
             fidget-nvim.enable = true;
+            highlight-undo.enable = true;
             indent-blankline.enable = true;
             nvim-cursorline.enable = true;
             nvim-web-devicons.enable = true;
@@ -78,7 +122,6 @@
             illuminate.enable = true;
             modes-nvim.enable = true;
           };
-
           keymaps = [
             {
               key = "<leader>e";
@@ -87,6 +130,8 @@
               action = ":Neotree toggle<CR>";
             }
           ];
+          presence.neocord.enable = true;
+          snippets.luasnip.enable = true;
         };
       };
     };
@@ -101,7 +146,7 @@
     lorri
     starship
     godot
-    codeberg-cli
+    ripgrep
   ];
   services = {
     lorri.enable = true;
@@ -109,7 +154,7 @@
 
   environment.variables = {
     EDITOR = "nvim";
-    BROWSER = "brave";
+    BROWSER = "floorp";
     TERMINAL = "zellij";
     SHELL = "nu";
   };

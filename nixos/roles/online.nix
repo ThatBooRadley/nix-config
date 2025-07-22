@@ -1,1 +1,1 @@
-{pkgs, ...}: {environment.systemPackages = with pkgs; [brave vesktop];}
+{pkgs, ...}: {environment.systemPackages = with pkgs; [vesktop floorp];}
