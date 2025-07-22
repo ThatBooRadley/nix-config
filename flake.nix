@@ -28,7 +28,7 @@
 
         modules = [
           nvf.nixosModules.default
-          ./nixos/hosts/laptop/configuration.nix
+          ./nixos/hosts/pc/configuration.nix
           ./nixos/roles/git.nix
           ./nixos/roles/coding.nix
           ./nixos/roles/gaming.nix
