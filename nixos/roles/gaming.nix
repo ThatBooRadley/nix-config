@@ -6,7 +6,7 @@
     };
     gamemode.enable = true;
   };
-  environment.systemPackages = with pkgs; [openseeface itch prismlauncher protonup legendary-heroic];
+  environment.systemPackages = with pkgs; [openseeface itch prismlauncher protonup rare];
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/baileyb/.steam/root/compatibilitytools.d";
   };
