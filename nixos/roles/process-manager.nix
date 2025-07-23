@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [czkawka resources];
+  environment.systemPackages = with pkgs; [czkawka resources bottles];
 }
