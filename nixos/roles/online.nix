@@ -1,1 +1,1 @@
-{pkgs, ...}: {environment.systemPackages = with pkgs; [vesktop floorp];}
+{pkgs, ...}: {environment.systemPackages = with pkgs; [vesktop librewolf];}

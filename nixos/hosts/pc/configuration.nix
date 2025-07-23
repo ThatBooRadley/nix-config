@@ -26,17 +26,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.xserver.videoDrivers = ["nvidia"];
+
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;
     };
     nvidia = {
-      modesetting.enable = true;
-      powerManagement.finegrained = true;
+      modesetting.enable = false;
       open = true;
       nvidiaSettings = true;
-      forceFullCompositionPipeline = true;
     };
   };
   networking.hostName = "nixos"; # Define your hostname.
