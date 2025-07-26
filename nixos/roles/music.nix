@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [spotify alsa-scarlett-gui helvum nuclear];
+  environment.systemPackages = with pkgs; [spotify alsa-scarlett-gui helvum];
 
   services = {
     pipewire = {
