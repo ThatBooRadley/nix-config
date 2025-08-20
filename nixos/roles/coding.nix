@@ -18,7 +18,7 @@
       plugins = {
         inherit (pkgs.yaziPlugins) starship;
       };
-      initLua = ~/.config/yazi/init.lua;
+      initLua = ~/Nix-Config/nixos/roles/yazi.lua;
     };
     nvf = {
       enable = true;
