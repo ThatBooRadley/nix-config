@@ -15,6 +15,10 @@
         mgr.show_hidden = true;
         mgr.linemode = "size";
       };
+      plugins = {
+        inherit (pkgs.yaziPlugins) starship;
+      };
+      initLua = ~/.config/yazi/init.lua;
     };
     nvf = {
       enable = true;
@@ -147,6 +151,7 @@
     starship
     godot
     ripgrep
+    yaziPlugins.starship
   ];
   services = {
     lorri.enable = true;
