@@ -14,11 +14,47 @@
       settings.yazi = {
         mgr.show_hidden = true;
         mgr.linemode = "size";
+        plugin = {
+          prepend_preloaders = [
+            {
+              mime = "{audio,video,image}/*";
+              run = "mediainfo";
+            }
+            {
+              mime = "application/subrip";
+              run = "mediainfo";
+            }
+            {
+              mime = "application/postscript";
+              run = "mediainfo";
+            }
+          ];
+          prepend_previewers = [
+            {
+              mime = "{audio,video,image}/*";
+              run = "mediainfo";
+            }
+            {
+              mime = "application/subrip";
+              run = "mediainfo";
+            }
+            {
+              mime = "application/postscript";
+              run = "mediainfo";
+            }
+          ];
+        };
+        tasks.image_alloc = 1073741824;
       };
       plugins = {
-        inherit (pkgs.yaziPlugins) starship;
+        inherit (pkgs.yaziPlugins) starship mediainfo fullBoarder;
       };
-      initLua = ~/Nix-Config/nixos/roles/yazi.lua;
+      initLua = pkgs.writeText "init.lua" ''
+        require("starship"):setup()
+        require("fullBoarder"):setup() {
+          type = ui.Border.ROUNDED,
+        }
+      '';
     };
     nvf = {
       enable = true;
@@ -151,7 +187,10 @@
     starship
     godot
     ripgrep
+    mediainfo
     yaziPlugins.starship
+    yaziPlugins.mediainfo
+    yaziPlugins.fullBoarder
   ];
   services = {
     lorri.enable = true;
