@@ -47,13 +47,10 @@
         tasks.image_alloc = 1073741824;
       };
       plugins = {
-        inherit (pkgs.yaziPlugins) starship mediainfo fullBoarder;
+        inherit (pkgs.yaziPlugins) starship mediainfo;
       };
       initLua = pkgs.writeText "init.lua" ''
         require("starship"):setup()
-        require("fullBoarder"):setup() {
-          type = ui.Border.ROUNDED,
-        }
       '';
     };
     nvf = {
@@ -190,7 +187,6 @@
     mediainfo
     yaziPlugins.starship
     yaziPlugins.mediainfo
-    yaziPlugins.fullBoarder
   ];
   services = {
     lorri.enable = true;
