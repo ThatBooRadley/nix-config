@@ -70,7 +70,7 @@
           languages = {
             rust = {
               enable = true;
-              crates.enable = true;
+
               format.enable = true;
               lsp = {
                 enable = true;

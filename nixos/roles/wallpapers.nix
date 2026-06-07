@@ -1,1 +1,1 @@
-{ pkgs, ... }: { environment.systemPackages = with pkgs; [ variety ]; }
+{pkgs, ...}: {environment.systemPackages = with pkgs; [variety];}
