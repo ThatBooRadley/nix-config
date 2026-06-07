@@ -104,7 +104,7 @@
           treesitter = {
             highlight.enable = true;
             indent.enable = true;
-            incrementalSelection.enable = true;
+            #incrementalSelection.enable = true;
             textobjects.enable = true;
             #context.enable = true;
           };
