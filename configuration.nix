@@ -9,6 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  nixpkgs.overlays = [
+    (import ./overlays.nix)
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

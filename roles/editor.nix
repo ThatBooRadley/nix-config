@@ -1,11 +1,23 @@
-{config, ...}:
+{config, pkgs, ...}:
 
-{
-  #environment.systemPackages = with pkgs; [];
-
-  programs.neovim = {
-    enable = true;
+let
+  myNeovim = pkgs.neovim.override {
+    vimAlias = true;
+    viAlias = true;
+    configure = {
+      customRC = ''
+      '';
+      packages.myVimPackages = with pkgs.vimPlugins; {
+        start = [
+          nvim-treesitter.withAllGrammars
+	];
+	opt = [];
+      };
+    };
   };
-  
-  programs.git.enable = true;
+in
+{
+  environment.systemPackages = with pkgs; [
+    myNeovim
+  ];
 }
