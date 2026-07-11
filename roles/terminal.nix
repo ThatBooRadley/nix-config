@@ -7,6 +7,10 @@
     zellij
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
+  ];
+
   programs.yazi = {
     enable = true;
     settings = {

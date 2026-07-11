@@ -11,19 +11,30 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+		nvf = {
+			url = "github:notashelf/nvf";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixpkgs, noctalia, noctalia-greeter, ...}: {
+  outputs = {self, nixpkgs, noctalia, noctalia-greeter, nvf, spicetify-nix, ...}: {
     nixosConfigurations.bixos-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./roles/git.nix
         ./roles/window.nix
         ./roles/editor.nix
-	./roles/terminal.nix
+        ./roles/terminal.nix
+        ./roles/spotify.nix
         ./configuration.nix
-	noctalia.nixosModules.default
-	noctalia-greeter.nixosModules.default
+        noctalia.nixosModules.default
+        noctalia-greeter.nixosModules.default
+        nvf.nixosModules.default
+        spicetify-nix.nixosModules.default
       ];
     };
   };
