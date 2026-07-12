@@ -1,4 +1,4 @@
-{config, ...}:
+{config, lib, ...}:
 
 {
   programs.nvf = {
@@ -10,24 +10,19 @@
 					friendly-snippets.enable = true;
 					sourcePlugins = {
 						ripgrep.enable = true;
-						spell.enable = true;
+						#spell.enable = true;
 					};
 				};
 				binds.whichKey.enable = true;
-				clipboard.enable = true;
+				clipboard = {
+          enable = true;
+          providers.wl-copy.enable = true;
+        };
 				diagnostics = {
 					enable = true;
 					nvim-lint.enable = true;
 				};
-				filetree.nvimTree = {
-					enable = true;
-					mappings = {
-						findFile = "<leader>eg";
-						focus = "<leader>ef";
-						refresh = "<leader>er";
-						toggle = "<leader>e";
-					};
-				};
+				filetree.neo-tree.enable = true;
 				formatter.conform-nvim = {
 					enable = true;
 					presets.prettier.enable = true;
@@ -42,6 +37,14 @@
 					clang.enable = true;
 					java.enable = true;
 				};
+        keymaps = [
+          {
+            key = "<leader>e";
+            mode = ["n" "i" "v"];
+            silent = false;
+            action = "<cmd>Neotree toggle<CR>";
+          }
+        ];
 				lsp = {
 					enable = true;
 					formatOnSave = true;
@@ -67,10 +70,7 @@
 					name = "catppuccin";
 					style = "auto";
 				};
-				treesitter = {
-					enable = true;
-					context.enable = true;
-				};
+        tabline.nvimBufferline.enable = true;
 				ui = {
 					colorizer.enable = true;
 					illuminate.enable = true;

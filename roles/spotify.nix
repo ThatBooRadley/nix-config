@@ -1,4 +1,4 @@
-{config, ...}:
+{config, inputs, pkgs, lib, ...}:
 
 {
   programs.spicetify =
@@ -11,4 +11,12 @@
     #enabledExtensions = [];
     #enabledSnippets = [];
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "spotify"
+  ];
+
+  environment.systemPackages = with pkgs; [
+    playerctl
+  ];
 }
