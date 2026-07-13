@@ -8,4 +8,7 @@
       email = "bbignall1225@gmail.com";
     };
   };
+  environment.systemPackages = with pkgs; [
+    gh
+  ];
 }
