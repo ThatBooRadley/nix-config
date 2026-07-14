@@ -1,22 +1,15 @@
-{config, inputs, pkgs, lib, ...}:
+{config, pkgs, lib, ...}:
 
 {
-  programs.spicetify =
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  in
-  {
-    enable = true;
-    #enabledCustomApps = [];
-    #enabledExtensions = [];
-    #enabledSnippets = [];
-  };
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
   ];
 
+  networking.firewall.allowedTCPPorts = [ 57621 ];
+  networking.firewall.allowedUDPPorts = [ 5353 ];
+
   environment.systemPackages = with pkgs; [
+    spotify
     playerctl
   ];
 }

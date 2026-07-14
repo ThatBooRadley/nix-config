@@ -6,7 +6,7 @@
 		settings = {
 			vim = {
 				autocomplete.blink-cmp = {
-					enable = true;
+					#enable = true;
 					friendly-snippets.enable = true;
 					sourcePlugins = {
 						ripgrep.enable = true;
@@ -30,12 +30,12 @@
 				fzf-lua.enable = true;
 				git.enable = true;
 				languages = {
-					nix.enable = true;
-          nu.enable = true;
-					rust.enable = true;
-					toml.enable = true;
-					clang.enable = true;
-					java.enable = true;
+					#nix.enable = true;
+          #nu.enable = true;
+					#rust.enable = true;
+					#toml.enable = true;
+					#clang.enable = true;
+					#java.enable = true;
 				};
         keymaps = [
           {

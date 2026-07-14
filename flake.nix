@@ -15,13 +15,9 @@
 			url = "github:notashelf/nvf";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = {self, nixpkgs, noctalia, noctalia-greeter, nvf, spicetify-nix, ...}: {
+  outputs = {self, nixpkgs, noctalia, noctalia-greeter, nvf, ...}: {
     nixosConfigurations.bixos-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -34,7 +30,6 @@
         noctalia.nixosModules.default
         noctalia-greeter.nixosModules.default
         nvf.nixosModules.default
-        spicetify-nix.nixosModules.default
       ];
     };
   };
