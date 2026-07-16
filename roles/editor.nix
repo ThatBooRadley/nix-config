@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.nvf = {
@@ -19,6 +19,11 @@
         diagnostics = {
           enable = true;
           nvim-lint.enable = true;
+          config.virtual_lines = true;
+        };
+        extraPlugins = {
+          #keepcursor
+          #filler-begone
         };
         filetree.neo-tree.enable = true;
         git.enable = true;
