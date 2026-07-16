@@ -19,25 +19,8 @@
         diagnostics = {
           enable = true;
           nvim-lint.enable = true;
-          presets = {
-            checkmake.enable = true;
-            deadnix.enable = true;
-            dotenv-linter.enable = true;
-            taplo.enable = true;
-          };
         };
         filetree.neo-tree.enable = true;
-        formatter.conform-nvim = {
-          #enable = true;
-          presets = {
-            astyle.enable = true;
-            dockerfmt.enable = true;
-            nixfmt-rs.enable = true;
-            prettier.enable = true;
-            rustfmt.enable = true;
-            tombi.enable = true;
-          };
-        };
         git.enable = true;
         keymaps = [
           {
@@ -80,17 +63,24 @@
           enable = true;
           formatOnSave = true;
           inlayHints.enable = true;
+          lightbulb.enable = true;
           lspsaga.enable = true;
           trouble.enable = true;
         };
-        notify.nvim-notify.enable = true;
+        notify.nvim-notify = {
+          enable = true;
+          setupOpts.background_colour = "#000000";
+        };
         options = {
           shiftwidth = 2;
           tabstop = 2;
           wrap = false;
         };
         presence.neocord.enable = true;
-        snippets.luasnip.enable = true;
+        snippets.luasnip = {
+          enable = true;
+          setupOpts.enable_autosnippets = true;
+        };
         syntaxHighlighting = true;
         tabline.nvimBufferline.enable = true;
         telescope.enable = true;
@@ -109,7 +99,6 @@
         utility = {
           csvview.enable = true;
           grug-far-nvim.enable = true;
-          nix-develop.enable = true;
           sleuth.enable = true;
         };
         visuals = {
@@ -119,6 +108,7 @@
           indent-blankline.enable = true;
           nvim-cursorline.enable = true;
           rainbow-delimiters.enable = true;
+          tiny-devicons-auto-colors.enable = true;
         };
       };
     };
