@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}:
+{ ... }:
 
 {
   programs.nvf = {
@@ -42,9 +42,23 @@
         keymaps = [
           {
             key = "<leader>e";
-            mode = ["n" "i" "v"];
+            mode = [
+              "n"
+              "i"
+              "v"
+            ];
             silent = true;
             action = "<cmd>Neotree toggle<CR>";
+          }
+          {
+            key = "<leader>n";
+            mode = [
+              "n"
+              "i"
+              "v"
+            ];
+            silent = true;
+            action = "<cmd>Telescope notify<CR>";
           }
         ];
         languages = {
@@ -79,6 +93,7 @@
         snippets.luasnip.enable = true;
         syntaxHighlighting = true;
         tabline.nvimBufferline.enable = true;
+        telescope.enable = true;
         theme = {
           enable = true;
           name = "everforest";

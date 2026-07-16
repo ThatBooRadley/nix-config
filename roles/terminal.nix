@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -19,38 +19,102 @@
       yazi = {
         mgr = {
           show_hidden = true;
-          linemode = "size"; 
+          linemode = "size";
         };
         plugin = {
           prepend_fetchers = [
-            {url = "*"; run = "git"; group = "git";} #git
-            {url = "*/"; run = "git"; group = "git";} #git
+            {
+              url = "*";
+              run = "git";
+              group = "git";
+            } # git
+            {
+              url = "*/";
+              run = "git";
+              group = "git";
+            } # git
           ];
           prepend_preloaders = [
-            {mime = "{audio,video,image}/*"; run = "mediainfo";} #mediainfo
-            {mime = "application/subrip"; run = "mediainfo";} #mediainfo
+            {
+              mime = "{audio,video,image}/*";
+              run = "mediainfo";
+            } # mediainfo
+            {
+              mime = "application/subrip";
+              run = "mediainfo";
+            } # mediainfo
           ];
           prepend_previewers = [
-            {mime = "{audio,video,image}/*"; run = "mediainfo";} #mediainfo
-            {mime = "application/subrip"; run = "mediainfo";} #mediainfo
-            {mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"; run = "ouch";} #ouch
+            {
+              mime = "{audio,video,image}/*";
+              run = "mediainfo";
+            } # mediainfo
+            {
+              mime = "application/subrip";
+              run = "mediainfo";
+            } # mediainfo
+            {
+              mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
+              run = "ouch";
+            } # ouch
           ];
         };
-        tasks.image_alloc = 1024*1024*1024;
+        tasks.image_alloc = 1024 * 1024 * 1024;
       };
       keymap.mgr = {
         prepend_keymap = [
-          {on = "y"; run = ["yank" "plugin clipboard -- --action=copy"];} #clipboard
-          {on = ["c" "a" "a"]; run = "plugin compress"; desc = "Archive selected files";} #compress
-          {on = "M"; run = "plugin mount";} #mount
-          {on = ["." "s"]; run = "plugin what-size"; desc = "Calc size of selection or cwd";} #what-size
-          {on = "o"; run = "plugin confirm-open"; desc = "Open selected files";} #confirm-open
-          {on = "<Enter>"; run = "plugin confirm-open"; desc = "Open selected files";} #confirm-open
+          {
+            on = "y";
+            run = [
+              "yank"
+              "plugin clipboard -- --action=copy"
+            ];
+          } # clipboard
+          {
+            on = [
+              "c"
+              "a"
+              "a"
+            ];
+            run = "plugin compress";
+            desc = "Archive selected files";
+          } # compress
+          {
+            on = "M";
+            run = "plugin mount";
+          } # mount
+          {
+            on = [
+              "."
+              "s"
+            ];
+            run = "plugin what-size";
+            desc = "Calc size of selection or cwd";
+          } # what-size
+          {
+            on = "o";
+            run = "plugin confirm-open";
+            desc = "Open selected files";
+          } # confirm-open
+          {
+            on = "<Enter>";
+            run = "plugin confirm-open";
+            desc = "Open selected files";
+          } # confirm-open
         ];
       };
     };
     plugins = {
-      inherit (pkgs.yaziPlugins) clipboard compress full-border git mount mediainfo ouch starship;
+      inherit (pkgs.yaziPlugins)
+        clipboard
+        compress
+        full-border
+        git
+        mount
+        mediainfo
+        ouch
+        starship
+        ;
       what-size = pkgs.fetchFromGitHub {
         owner = "pirafrank";
         repo = "what-size.yazi";
