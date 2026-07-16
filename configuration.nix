@@ -77,10 +77,8 @@
     librewolf
     mpv
     ffmpeg
-    kid3
+    legcord
   ];
-
-  #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "discord" ];
 
   programs.nh.enable = true;
   programs.localsend.enable = true;
