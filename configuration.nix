@@ -92,6 +92,14 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.ssh = {
+    extraConfig = ''
+      Host bixos-desktop
+        Hostname 192.168.1.123
+        Port 22
+        User bailey
+    '';
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

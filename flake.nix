@@ -18,16 +18,15 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      noctalia,
-      noctalia-greeter,
-      nvf,
+    inputs@{
       ...
     }:
+    let
+      system = "x86_64-linux";
+    in
     {
-      nixosConfigurations.bixos-desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+      nixosConfigurations.bixos-desktop = inputs.nixpkgs.lib.nixosSystem {
+        inherit system;
         modules = [
           ./roles/git.nix
           ./roles/window.nix
@@ -36,9 +35,9 @@
           ./roles/spotify.nix
           ./roles/grub.nix
           ./configuration.nix
-          noctalia.nixosModules.default
-          noctalia-greeter.nixosModules.default
-          nvf.nixosModules.default
+          inputs.noctalia.nixosModules.default
+          inputs.noctalia-greeter.nixosModules.default
+          inputs.nvf.nixosModules.default
         ];
       };
     };
