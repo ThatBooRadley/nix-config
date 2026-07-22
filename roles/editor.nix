@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.nvf = {
@@ -9,6 +9,10 @@
           blink-cmp = {
             enable = true;
             friendly-snippets.enable = true;
+            mappings = {
+              next = "<Down>";
+              previous = "<Up>";
+            };
           };
         };
         binds.whichKey.enable = true;

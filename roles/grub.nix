@@ -15,37 +15,33 @@
   };
   time.hardwareClockInLocalTime = true;
 
-  fileSystems =
-    let
-      windows = "nvme0n1";
-    in
-    {
-      #"/mnt/windows/boot" = {
-      #  device = "/dev/${windows}p1";
-      #  fsType = "none";
-      #  options = [
-      #    "users"
-      #    "nofail"
-      #    "exec"
-      #  ];
-      #};
-      "/mnt/windows/main" = {
-        device = "/dev/${windows}p2";
-        fsType = "ntfs";
-        options = [
-          "users"
-          "nofail"
-          "exec"
-        ];
-      };
-      "/mnt/windows/swap" = {
-        device = "/dev/${windows}p3";
-        fsType = "ntfs";
-        options = [
-          "users"
-          "nofail"
-          "exec"
-        ];
-      };
+  fileSystems = {
+    #"/mnt/windows/boot" = {
+    #  device = "/dev/${windows}p1";
+    #  fsType = "none";
+    #  options = [
+    #    "users"
+    #    "nofail"
+    #    "exec"
+    #  ];
+    #};
+    "/mnt/windows/main" = {
+      device = "/dev/disk/by-uuid/BABCBD23BCBCDB59";
+      fsType = "ntfs";
+      options = [
+        "users"
+        "nofail"
+        "exec"
+      ];
     };
+    "/mnt/windows/swap" = {
+      device = "/dev/disk/by-uuid/E6D8E598D8E566F1";
+      fsType = "ntfs";
+      options = [
+        "users"
+        "nofail"
+        "exec"
+      ];
+    };
+  };
 }

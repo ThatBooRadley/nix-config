@@ -10,5 +10,6 @@
   };
   environment.systemPackages = with pkgs; [
     gh
+    nurl
   ];
 }
