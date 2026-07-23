@@ -36,7 +36,6 @@
             key = "<leader>e";
             mode = [
               "n"
-              "i"
               "v"
             ];
             silent = true;
@@ -46,7 +45,6 @@
             key = "<leader>n";
             mode = [
               "n"
-              "i"
               "v"
             ];
             silent = true;
