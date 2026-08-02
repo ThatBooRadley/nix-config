@@ -34,6 +34,7 @@
           ./roles/terminal.nix
           ./roles/spotify.nix
           ./roles/grub.nix
+          ./roles/webcam.nix
           ./configuration.nix
           inputs.noctalia.nixosModules.default
           inputs.noctalia-greeter.nixosModules.default
