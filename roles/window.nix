@@ -1,8 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  #environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [ xwayland-satellite ];
 
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
