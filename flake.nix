@@ -3,14 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,12 +24,11 @@
           ./roles/window.nix
           ./roles/editor.nix
           ./roles/terminal.nix
-          ./roles/spotify.nix
+          ./roles/music.nix
           ./roles/grub.nix
+          ./roles/vpn.nix
           ./roles/webcam.nix
           ./configuration.nix
-          inputs.noctalia.nixosModules.default
-          inputs.noctalia-greeter.nixosModules.default
           inputs.nvf.nixosModules.default
         ];
       };

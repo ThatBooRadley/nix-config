@@ -2,24 +2,24 @@
 
 {
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = with pkgs; [ xwayland-satellite ];
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+    cups-pk-helper
+  ];
 
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
 
-  programs.noctalia = {
+  programs.dms-shell = {
     enable = true;
-    recommendedServices.enable = true;
-  };
-
-  programs.noctalia-greeter = {
-    enable = true;
-
-    settings = {
-      default_session = {
-        user = "bailey";
-        command = "Niri";
-      };
+    enableSystemMonitoring = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    plugins = {
     };
+  };
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
   };
 }
