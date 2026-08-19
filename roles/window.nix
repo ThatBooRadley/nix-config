@@ -10,6 +10,15 @@
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
 
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+  };
+
   programs.dms-shell = {
     enable = true;
     enableSystemMonitoring = true;
